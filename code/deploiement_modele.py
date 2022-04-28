@@ -208,6 +208,12 @@ def id_client_recu_est_verifie(id_client_recu):
 	else:
 		return False
 
+@app.route('/ids', methods=['GET'])
+def recuperer_liste_id_clients():
+	liste_id_clients = {}
+	liste_id_clients['id'] = df_demandes_credit_brutes['SK_ID_CURR'].tolist()
+	return jsonify(liste_id_clients)
+
 @app.route('/clients', methods=['GET'])
 def recuperer_infos_demande_credit_client():
 	query_parameters = request.args
@@ -222,23 +228,23 @@ def recuperer_infos_demande_credit_client():
 		infos_client['problemes_remboursement'] = modele.predict(df_std_data_client).tolist()
 		infos_client['score_client'] = modele.predict_proba(df_std_data_client).tolist()
 
-		infos_client['id'] = str(df_data_client['SK_ID_CURR'][0])
-		infos_client['type_contrat'] = str(df_data_client['NAME_CONTRACT_TYPE'][0])
-		infos_client['genre'] = str(df_data_client['CODE_GENDER'][0])
-		infos_client['possede_voiture'] = str(df_data_client['FLAG_OWN_CAR'][0])
-		infos_client['possede_bien_immobilier'] = str(df_data_client['FLAG_OWN_REALTY'][0])
-		infos_client['montant_revenus'] = str(df_data_client['AMT_INCOME_TOTAL'][0])
-		infos_client['montant_credit'] = str(df_data_client['AMT_CREDIT'][0])
-		infos_client['type_revenus'] = str(df_data_client['NAME_INCOME_TYPE'][0])
-		infos_client['type_education'] = str(df_data_client['NAME_EDUCATION_TYPE'][0])
-		infos_client['statut_familial'] = str(df_data_client['NAME_FAMILY_STATUS'][0])
-		infos_client['type_logement'] = str(df_data_client['NAME_HOUSING_TYPE'][0])
-		infos_client['taille_foyer'] = str(df_data_client['CNT_FAM_MEMBERS'][0])
-		infos_client['cercle_social_en_defaut_30j'] = str(df_data_client['DEF_30_CNT_SOCIAL_CIRCLE'][0])
-		infos_client['age'] = str(df_data_client['CLIENT_AGE'][0])
-		infos_client['type_voiture'] = str(df_data_client['OWN_CAR_TYPE'][0])
-		infos_client['anciennete_job'] = str(df_data_client['JOB_SENIORITY'][0])
-		infos_client['taux_remboursement_annuel'] = str(df_data_client['ANNUAL_PAYMENT_RATE'][0])
+		# infos_client['id'] = str(df_data_client['SK_ID_CURR'][0])
+		# infos_client['type_contrat'] = str(df_data_client['NAME_CONTRACT_TYPE'][0])
+		# infos_client['genre'] = str(df_data_client['CODE_GENDER'][0])
+		# infos_client['possede_voiture'] = str(df_data_client['FLAG_OWN_CAR'][0])
+		# infos_client['possede_bien_immobilier'] = str(df_data_client['FLAG_OWN_REALTY'][0])
+		# infos_client['montant_revenus'] = str(df_data_client['AMT_INCOME_TOTAL'][0])
+		# infos_client['montant_credit'] = str(df_data_client['AMT_CREDIT'][0])
+		# infos_client['type_revenus'] = str(df_data_client['NAME_INCOME_TYPE'][0])
+		# infos_client['type_education'] = str(df_data_client['NAME_EDUCATION_TYPE'][0])
+		# infos_client['statut_familial'] = str(df_data_client['NAME_FAMILY_STATUS'][0])
+		# infos_client['type_logement'] = str(df_data_client['NAME_HOUSING_TYPE'][0])
+		# infos_client['taille_foyer'] = str(df_data_client['CNT_FAM_MEMBERS'][0])
+		# infos_client['cercle_social_en_defaut_30j'] = str(df_data_client['DEF_30_CNT_SOCIAL_CIRCLE'][0])
+		# infos_client['age'] = str(df_data_client['CLIENT_AGE'][0])
+		# infos_client['type_voiture'] = str(df_data_client['OWN_CAR_TYPE'][0])
+		# infos_client['anciennete_job'] = str(df_data_client['JOB_SENIORITY'][0])
+		# infos_client['taux_remboursement_annuel'] = str(df_data_client['ANNUAL_PAYMENT_RATE'][0])
 	
 	return jsonify(infos_client)
 
