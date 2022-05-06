@@ -1,1 +1,1 @@
-web: cd code && python deploiement_modele.py
+web: setup.sh && python deploiement_modele.py
