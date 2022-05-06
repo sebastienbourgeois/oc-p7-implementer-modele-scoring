@@ -1,1 +1,1 @@
-web: setup.sh && python deploiement_modele.py
+web: sh setup.sh && python deploiement_modele.py
