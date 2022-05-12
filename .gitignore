@@ -1,9 +1,10 @@
 ########################################################
 #             Jupyter notebook checkpoints             #
 ########################################################
-/code/.ipynb_checkpoints/
+/code/modelisation/.ipynb_checkpoints/
 
 ########################################################
 #     Fichiers de données trop lourds pour github      #
 ########################################################
-/code/data/brutes/*.csv
+/code/modelisation/data/brutes/*.csv
+/code/dashboard/data/*.csv
