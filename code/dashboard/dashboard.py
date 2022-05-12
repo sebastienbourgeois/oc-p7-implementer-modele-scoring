@@ -3,7 +3,7 @@ import fonctions_dashboard as fd
 
 def main():
 	# Chargement et préparation des données
-	df_demandes_credit_brutes = fd.charger_demandes_credit("data/brutes/application_test.csv")
+	df_demandes_credit_brutes = fd.charger_demandes_credit("data/application_test.csv")
 	df_demandes_credit = fd.generer_features_engineering(df_demandes_credit_brutes)
 	df_std_demandes_credit = fd.standardiser_data(df_demandes_credit)
 	df_std_demandes_credit = fd.ajouter_donnees_manquantes(df_std_demandes_credit, df_demandes_credit)
