@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+jupyter = "*"
+notebook = "*"
+ipykernel = "*"
+numpy = "*"
+pandas = "*"
+scikit-learn = "*"
+matplotlib = "*"
+seaborn = "*"
+lightgbm = "*"
+imbalanced-learn = "*"
+shap = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
