@@ -21,5 +21,10 @@ def predire_octroi_score_credit():
 	# Retourne la réponse au format json
 	return jsonify(predictions_client)
 
+# Prédit si le client aura des problèmes de remboursement et le score échéant
+@app.route('/')
+def afficher_index():
+	return "<h1>API du modèle de scoring de <em>Prêt à dépenser</em></h1>"
+
 if __name__ == "__main__":
-	app.run(debug=True)
+	app.run()

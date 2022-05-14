@@ -1,1 +1,1 @@
-worker: python deploiement_modele.py
+web: gunicorn deploiement_modele:app
