@@ -9,12 +9,12 @@ notebook = "*"
 ipykernel = "*"
 numpy = "*"
 pandas = "*"
-scikit-learn = "*"
 matplotlib = "*"
 seaborn = "*"
 lightgbm = "*"
 imbalanced-learn = "*"
 shap = "*"
+scikit-learn = "<=1.1.0"
 
 [dev-packages]
 
