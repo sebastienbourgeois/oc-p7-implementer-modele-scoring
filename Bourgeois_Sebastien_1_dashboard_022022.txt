@@ -1,0 +1,2 @@
+Lien dashboard : https://oc-dashboard-scoring.herokuapp.com/
+Lien API : https://oc-api-modele-scoring.herokuapp.com/
